@@ -31,4 +31,4 @@ $file = fopen('text.txt', 'w');
 fwrite($file, $text);
 fclose($file);
 $filename = file('src/vivid.txt');
-task4($filename);
+task4($file);
