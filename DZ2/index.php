@@ -32,5 +32,3 @@ fwrite($file, $text);
 fclose($file);
 $filename = file('text.txt');
 task4($filename);
-$filename = file('src/vivid.txt');
-task4($filename);
