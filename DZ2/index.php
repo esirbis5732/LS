@@ -15,7 +15,7 @@ $arr = [5, 3];
 echo task3($arr).PHP_EOL;
 echo '<h2>Задание №4</h2>';
 echo date("d.m.Y i:s") .PHP_EOL;
-echo date("d.m.Y i:s", mktime(0, 0, 0, 2, 29, 2018)).PHP_EOL;
+echo date("d.m.Y i:s", mktime(0, 0, 0, 2, 24, 2016)).PHP_EOL;
 echo '<h2>Задание №5</h2>';
 $str = 'Карл у Клары украл Кораллы';
 echo $str .PHP_EOL;
