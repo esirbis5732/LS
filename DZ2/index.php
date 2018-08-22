@@ -30,5 +30,7 @@ $text = 'Hello again!';
 $file = fopen('text.txt', 'w');
 fwrite($file, $text);
 fclose($file);
+$filename = file('text.txt');
+task4($filename);
 $filename = file('src/vivid.txt');
 task4($filename);
