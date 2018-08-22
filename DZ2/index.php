@@ -23,7 +23,7 @@ $str = str_replace("К", "", $str);
 echo $str.PHP_EOL;
 $str = 'Две бутылки лимонада';
 echo $str .PHP_EOL;
-$str = str_replace("Две", "", $str);
+$str = str_replace("Две", "Три", $str);
 echo $str.PHP_EOL;
 echo '<h2>Задание №6</h2>';
 $text = 'Hello again!';
