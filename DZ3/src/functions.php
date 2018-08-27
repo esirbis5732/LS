@@ -27,7 +27,7 @@ function task2()
             'model' => 'astra',
             'age' => 6,
             'broken' => false,
-            'repairs' => []
+            'repairs' => [1=>'2']
         ],
         3 => [
             'mark' => 'lada',
@@ -99,11 +99,11 @@ function task4()
     $data = json_decode($json, true);
     echo '<br>';
     // Ищем в массиве значение по ключу 'title'
-    $title = find_value($data, 'title');
+    $title = array_keys($data, 'title');
     if (!empty($title)) {
         echo 'title = ' . $title . '<br>';
     }
-    $page_id = find_value($data, 'page_id');
+    $page_id = array_keys($data, 'page_id');
     if (!empty($page_id)) {
         echo 'page_id = ' . $page_id . '<br>';
     }
