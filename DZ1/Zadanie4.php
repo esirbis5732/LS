@@ -17,4 +17,3 @@ switch ($day) {
 		echo "Неизвестный день";
 }
 
-echo PHP_EOL;

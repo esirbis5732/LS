@@ -10,4 +10,3 @@ if (($age >= 1) && ($age <= 17)) {
 } else {
 	echo "Неизвестный возраст";
 }
-echo PHP_EOL;
