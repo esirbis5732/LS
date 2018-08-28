@@ -1,13 +1,11 @@
 <?php
 // Модуль для подключения к базе
-// На выходе:  $dbh
 // Файл с параметрами подключения
-$config = require_once realpath(__DIR__ . 'config.php');
+$config = include_once  'config.php';
 foreach ($config['db'] as $key => $value) {
     ${$key} = $value;
 }
 try {
-    // data source name
     $dsn = "mysql:host=$host;dbname=$dbname;charset=$charset";
     $opt = [
         PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
@@ -16,7 +14,6 @@ try {
     ];
     // Подключаемся к базе
     $dbh = new PDO($dsn, $user, $password, $opt);
-    // Всё нормально - отдаём $dbh
     return $dbh;
 } catch (PDOException $e) {
     return false;
