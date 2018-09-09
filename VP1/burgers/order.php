@@ -74,7 +74,7 @@ if (empty($orderId)) {
 }*/
 // Фаза 3: "Письмо" пользователю
 // Получаем адрес и номер заказа данного пользователя
-$userAddress = makeBeautyAddress($_REQUEST['street'], $_REQUEST['home'], $_REQUEST['part'], $_REQUEST['appt'], $_REQUEST['floor']);
+/*$userAddress = makeBeautyAddress($_REQUEST['street'], $_REQUEST['home'], $_REQUEST['part'], $_REQUEST['appt'], $_REQUEST['floor']);
 $userOrderNum = getOrderNumber($dbh, $userId);
 // Создаём папку для писем, если её нет
 $emailsFolder = __DIR__ . DIRECTORY_SEPARATOR . '_emails_';
@@ -108,4 +108,4 @@ if (empty($result)) {
     echo json_encode(['result' => 'fail', 'error_code' => 4005], JSON_UNESCAPED_UNICODE);
     return;
 }
-echo json_encode(['result' => 'success', 'order_id' => $orderId], JSON_UNESCAPED_UNICODE);
+echo json_encode(['result' => 'success', 'order_id' => $orderId], JSON_UNESCAPED_UNICODE);*/
