@@ -2,7 +2,7 @@
 echo '<pre>';
 print_r($_POST);
 // Входной контроль поля email и phone  (т.к. в базе они помечены NOT NULL)
-if ((empty($_REQUEST['email'])) || (empty($_REQUEST['phone']))) {
+/*if ((empty($_REQUEST['email'])) || (empty($_REQUEST['phone']))) {
     echo json_encode(['result' => 'fail', 'error_code' => 4001], JSON_UNESCAPED_UNICODE);
     return;
 }
@@ -107,4 +107,4 @@ if (empty($result)) {
     echo json_encode(['result' => 'fail', 'error_code' => 4005], JSON_UNESCAPED_UNICODE);
     return;
 }
-echo json_encode(['result' => 'success', 'order_id' => $orderId], JSON_UNESCAPED_UNICODE);
+echo json_encode(['result' => 'success', 'order_id' => $orderId], JSON_UNESCAPED_UNICODE);*/
