@@ -3,7 +3,7 @@
 return [
     "db" => [
         "host" => "localhost",
-        "dbname" => "burger",
+        "dbname" => "burgers",
         "user" => "root",
         "password" => "",
         "charset" => "utf8"

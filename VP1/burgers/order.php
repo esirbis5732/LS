@@ -1,4 +1,6 @@
 <?php
+echo '<pre>';
+print_r($_POST);
 // Входной контроль поля email и phone  (т.к. в базе они помечены NOT NULL)
 if ((empty($_REQUEST['email'])) || (empty($_REQUEST['phone']))) {
     echo json_encode(['result' => 'fail', 'error_code' => 4001], JSON_UNESCAPED_UNICODE);
@@ -15,8 +17,8 @@ $email = $_REQUEST['email'];
 // Ищем пользователя по email
 try {
     $sth = $dbh->prepare('SELECT id FROM users WHERE email = :email');
-    $sth->execute(array('email' => $email));
-    $userId = $sth->fetchColumn();
+    $sth->execute(array('email' => trim($email)));
+    $userId = $sth->rowColumn();
 } catch (PDOException $e) {
     return null;
 }

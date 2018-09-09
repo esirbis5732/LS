@@ -6,7 +6,7 @@ foreach ($config['db'] as $key => $value) {
     ${$key} = $value;
 }
 try {
-    $dsn = "mysql:host=$host;dbname=$dbname;charset=$charset";
+    $dsn = "mysql:host=$host;dbname=$dbname;charset=$charset utf-8";
     $opt = [
         PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
         PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
