@@ -1,4 +1,5 @@
 <?php
+$db=include_once 'db.php';
 echo '<pre>';
 print_r($_POST);
 // Входной контроль поля email и phone  (т.к. в базе они помечены NOT NULL)
