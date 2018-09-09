@@ -5,7 +5,7 @@ return [
         "host" => "localhost",
         "dbname" => "burger",
         "user" => "root",
-        "password" => "",
+        "password" => " ",
         "charset" => "utf8"
     ]
 ];
