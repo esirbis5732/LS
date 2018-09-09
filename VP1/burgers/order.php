@@ -50,7 +50,7 @@ $sql = "INSERT INTO orders" .
     "(user_id, street, home, part, appt, floor, comment, payment, callback) " .
     "VALUES " .
     "(:fuser_id, :fstreet, :fhome, :fpart, :fappt, :ffloor, :fcomment, :fpayment, :fcallback)";
-try {
+/*try {
     $sth = $dbh->prepare($sql);
     $sth->execute(array(
         "fuser_id" => $userId,
@@ -71,7 +71,7 @@ return $orderId;
 if (empty($orderId)) {
     echo json_encode(['result' => 'fail', 'error_code' => 4004], JSON_UNESCAPED_UNICODE);
     return;
-}
+}*/
 // Фаза 3: "Письмо" пользователю
 // Получаем адрес и номер заказа данного пользователя
 $userAddress = makeBeautyAddress($_REQUEST['street'], $_REQUEST['home'], $_REQUEST['part'], $_REQUEST['appt'], $_REQUEST['floor']);
