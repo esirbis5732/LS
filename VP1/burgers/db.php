@@ -13,7 +13,7 @@ try {*/
         PDO::ATTR_EMULATE_PREPARES => false
     ];*/
     // Подключаемся к базе
-    $dbh = new PDO($dsn,root );
+    $dbh = new PDO($dsn,'root',' ' );
     return $dbh;
 //}
 /*catch (PDOException $e) {
