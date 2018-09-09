@@ -16,7 +16,7 @@ if ($dbh === false) {
 //  Регистрация или "авторизация" пользователя
 $email = $_REQUEST['email'];
 // Ищем пользователя по email
-try {
+/*try {
     $sth = $dbh->prepare('SELECT id FROM users WHERE email = :email');
     $sth->execute(array('email' => trim($email)));
     $userId = $sth->rowColumn();
@@ -41,7 +41,7 @@ return $userId;
 if (empty($userId)) {
     echo json_encode(['result' => 'fail', 'error_code' => 4003], JSON_UNESCAPED_UNICODE);
     return;
-}
+}*/
 // Фаза 2: Оформление заказа
 // Записываем данные заказа в таблицу orders: в результате имеем orderId
 ((!empty($_REQUEST['payment'])) && ($_REQUEST['payment'] == 'card')) ? ($payment = 1) : ($payment = 0);
