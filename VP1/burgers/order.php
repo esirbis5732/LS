@@ -1,55 +1,55 @@
 <?php
-$db=include_once 'db.php';
 echo '<pre>';
-print_r($_POST);
-// Входной контроль поля email и phone  (т.к. в базе они помечены NOT NULL)
-if ((empty($_REQUEST['email'])) || (empty($_REQUEST['phone']))) {
-    echo json_encode(['result' => 'fail', 'error_code' => 4001], JSON_UNESCAPED_UNICODE);
-    return;
+$db=include_once 'db.php';
+require "func.php";
+
+$Regis=Registr($_POST['email'],$db);
+if (!$Regis){
+    $Regis=RegUser($db,$_POST['name'], $_POST['email'],$_POST['phone']);
 }
-// Подключаемся к базе
-$dbh = require_once 'db.php';
-if ($dbh === false) {
-    echo json_encode(['result' => 'fail', 'error_code' => 4002], JSON_UNESCAPED_UNICODE);
-    return;
-}
-//  Регистрация или "авторизация" пользователя
-$email = $_REQUEST['email'];
-// Ищем пользователя по email
-/*try {
-    $sth = $dbh->prepare('SELECT id FROM users WHERE email = :email');
-    $sth->execute(array('email' => trim($email)));
-    $userId = $sth->rowColumn();
-} catch (PDOException $e) {
-    return null;
-}
-if ($userId === false) {
-    // Нет такого пользователя. Создаём.
-    try {
-        $sth = $dbh->prepare("INSERT INTO users(name, email, phone) VALUES (:fname, :femail, :fphone)");
-        $sth->execute(array(
-            "fname" => $_REQUEST['name'],
-            "femail" => $_REQUEST['email'],
-            "fphone" => $_REQUEST['phone']
-        ));
-        $userId = $dbh->lastInsertId();
-    } catch (PDOException $e) {
-        return null;
-    }
-}
-return $userId;
-if (empty($userId)) {
-    echo json_encode(['result' => 'fail', 'error_code' => 4003], JSON_UNESCAPED_UNICODE);
-    return;
-}*/
+$data=RegOrder($db,json_encode($_POST), json_encode($_POST),$Regis['id']);
+$adres=RegOrder($db,json_encode($_POST), json_encode($_POST),$Regis['ulica'],$Regis['korpus'],$Regis['kvartira'],$Regis['itaj']);
+print_r($Regis);
+file_put_contents('bloc','zakaz#'.$data['id'].'\n Ваш заказ будет доставлен по адресу:'.$adres['ulica'].'Содержимое заказа:\n DarkBeefBurger за 500 рублей, 1 шт\n Спасибо!\n Это Ваш #' . $data['id'] .  'заказ!\n');
+
+
+
+
+
+
+
+
+
+
+
+
+/*$mailText = "Заказ № $orderId\n\n";
+//$mailText .= "Ваш заказ будет доставлен по адресу:\n";
+$mailText .= $userAddress . "\n\n";
+$mailText .= "Содержимое заказа:\n";
+$mailText .= "DarkBeefBurger за 500 рублей, 1 шт\n\n";
+$mailText .= "Спасибо!\n";
+$mailText .= "Это Ваш " . $userOrderNum . " заказ!\n";*/
+
+
+
+
+
+
+
+
+
+
+
+
 // Фаза 2: Оформление заказа
 // Записываем данные заказа в таблицу orders: в результате имеем orderId
-((!empty($_REQUEST['payment'])) && ($_REQUEST['payment'] == 'card')) ? ($payment = 1) : ($payment = 0);
+/*((!empty($_REQUEST['payment'])) && ($_REQUEST['payment'] == 'card')) ? ($payment = 1) : ($payment = 0);
 ((!empty($_REQUEST['callback'])) && ($_REQUEST['callback'] == 'on')) ? ($callback = 1) : ($callback = 0);
 $sql = "INSERT INTO orders" .
     "(user_id, street, home, part, appt, floor, comment, payment, callback) " .
     "VALUES " .
-    "(:fuser_id, :fstreet, :fhome, :fpart, :fappt, :ffloor, :fcomment, :fpayment, :fcallback)";
+    "(:fuser_id, :fstreet, :fhome, :fpart, :fappt, :ffloor, :fcomment, :fpayment, :fcallback)";*/
 /*try {
     $sth = $dbh->prepare($sql);
     $sth->execute(array(
