@@ -8,7 +8,7 @@ if ((empty($_REQUEST['email'])) || (empty($_REQUEST['phone']))) {
 }
 // Подключаемся к базе
 $dbh = require_once 'db.php';
-if ($dbh === false) {
+if ($dbh === true) {
     echo json_encode(['result' => 'fail', 'error_code' => 4002], JSON_UNESCAPED_UNICODE);
     return;
 }
