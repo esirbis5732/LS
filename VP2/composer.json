@@ -1,5 +1,6 @@
 {
     "require": {
-        "cviebrock/eloquent-sluggable": "^4.6"
+        "cviebrock/eloquent-sluggable": "^4.6",
+        "twig/twig": "^2.5"
     }
 }
