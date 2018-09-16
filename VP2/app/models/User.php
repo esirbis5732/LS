@@ -1,12 +1,11 @@
-
 <?php
-namespace app;
-use Illuminate\Database\Eloquent\Model;
-class User extends Model
+namespace models;
+class User
 {
-    protected $guarded = ['id'];
-    public function files()
+    protected $users = ['imja', 'vozrast', 'opisanie', 'fotograf'];
+    public function get()
     {
-        return $this->hasMany('App\Models\File', 'user_id', 'id');
+     return $this->users[' '];
+
     }
 }

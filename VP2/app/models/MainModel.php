@@ -1,20 +1,19 @@
 <?php
-namespace App;
-class MainModel
-{
-    protected $users = [
-        'user1', 'user2', 'user3'
-    ];
-    public function all()
-    {
-        return $this->users;
-    }
-    public function first()
-    {
-        return $this->users[0];
-    }
-    public function get($id)
-    {
-        return $this->users[$id];
+namespace Models;
+class Database {
+    function __construct() {
+        $capsule = new Capsule;
+        $capsule->addConnection([
+            "driver" => DBDRIVER,
+            "host" => DBHOST,
+            "database" => DBNAME,
+            "username" => DBUSER,
+            "password" => DBPASS,
+            "charset" => "utf8",
+            "collation" => "utf8_unicode_ci",
+            "prefix" => "",
+        ]);
+
+        $capsule->bootEloquent();
     }
 }

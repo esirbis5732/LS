@@ -4,11 +4,6 @@ namespace App;
 
 class Main extends MainController
 {
-    public function index()
-    {
-        echo 'hi';
-    }
-
     public function carbon()
     {
         $davno= Carbon::now()

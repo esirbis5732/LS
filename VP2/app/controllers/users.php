@@ -4,20 +4,6 @@ namespace App;
 
 class Users extends MainController
 {
-    public function index()
-    {
-        echo "users index";
-    }
-
-    public function create()
-    {
-        echo "User create interface";
-    }
-
-    public function nelza($id, $id2)
-    {
-        echo 'nelzia';
-    }
 
     public function showUserList()
     {
@@ -29,7 +15,7 @@ class Users extends MainController
         }
 
         $data['users'] = $users;
-        $data['username'] = 'Igor';
+        $data['username'] = 'Sergej';
         $this->view->render('users/userlist', $data);
     }
 

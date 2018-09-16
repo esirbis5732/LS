@@ -1,7 +1,8 @@
+
 <?php
-/**
- * Created by PhpStorm.
- * User: nadin
- * Date: 09.09.2018
- * Time: 22:00
- */
+ define("DBDRIVER","mysql");
+define("DBHOST","localhost");
+ define("DBNAME","user");
+ define("DBUSER","root");
+ define("DBPASS"," ");
+ define("DBPASS"," ");
